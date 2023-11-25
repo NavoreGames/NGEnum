@@ -24,3 +24,8 @@ public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
 ```
 
 Os atributos chaves podem ser declarados de algumas formas:
+
+```ruby
+  public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum("ChaveDoEnum");
+  public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum(1,"ChaveDoEnum");
+```
