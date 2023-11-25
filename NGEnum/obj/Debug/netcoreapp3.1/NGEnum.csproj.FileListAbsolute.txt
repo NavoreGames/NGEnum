@@ -1,0 +1,9 @@
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.GeneratedMSBuildEditorConfig.editorconfig
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.AssemblyInfoInputs.cache
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.AssemblyInfo.cs
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.csproj.CoreCompileInputs.cache
+E:\NGEnum3.5\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.deps.json
+E:\NGEnum3.5\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.dll
+E:\NGEnum3.5\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.pdb
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.dll
+E:\NGEnum3.5\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.pdb
