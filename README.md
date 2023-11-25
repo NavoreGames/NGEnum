@@ -8,8 +8,18 @@
 
 # Documentação
 
+Para criar seus enums, crie uma classe que herda da classe base(NGEnums) que contenha 3 construtores. Cada atributo será uma chave do seu enum eles serão declarados como readonly e o tipo é a própria classe,  como mostrado no exemplo abaixo:
+
+
 ```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
+public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
+{
+  public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum("ChaveDoEnum");
+  public static readonly NomeDoSeuEnum OutraChave = new NomeDoSeuEnum("OutraChave");
+
+  public NomeDoSeuEnum() : base() { }
+  public NomeDoSeuEnum(object pObject) : base(pObject) { }
+  public NomeDoSeuEnum(int pId, object pObject) : base(pId, pObject) { }
+}
+
 ```
