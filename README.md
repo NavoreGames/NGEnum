@@ -52,8 +52,8 @@ public class HerdadoDeOutroEnum : NomeDoSeuEnum
   public static readonly NomeDoSeuEnum OutraChaveHerdado = new NomeDoSeuEnum("OutraChaveHerdado");
 }
 ```
-
-Note que as propriedades são do tipo do enum pai, e a classe não precisa de construtor.
+> [!NOTE]
+> Note que as propriedades são do tipo do enum pai, e a classe não precisa de construtor.
 
 Como os enums podem ser herdados infinitamente, se necessário pode-se selar a classe para ela não poder ser mais herdada.
 ```ruby
