@@ -63,3 +63,6 @@ public static readonly NomeDoSeuEnum ChaveDoEnumHerdado = new NomeDoSeuEnum("Cha
 public static readonly NomeDoSeuEnum OutraChaveHerdado = new NomeDoSeuEnum("OutraChaveHerdado");
 }
 ```
+
+### Métodos de conversão:
+
