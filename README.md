@@ -31,3 +31,16 @@ Os atributos chaves podem ser declarados de algumas formas:
   public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum("ChaveDoEnum");
   public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum(1,"ChaveDoEnum");
 ```
+  - Como o construtor aceita um objeto, poderia ser inserido um objeto qualquer como chave, como outra classe, um type ou até mesmo um enum tradicional.
+```ruby
+public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
+{
+  public static readonly NomeDoSeuEnum Classe1 = new NomeDoSeuEnum(typeof(Classe1);
+  public static readonly NomeDoSeuEnum Classe2 = new NomeDoSeuEnum(typeof(Classe2);
+
+  public NomeDoSeuEnum() : base(None) { }
+  public NomeDoSeuEnum(object pObject) : base(pObject) { }
+  public NomeDoSeuEnum(int pId, object pObject) : base(pId, pObject) { }
+}
+
+```
