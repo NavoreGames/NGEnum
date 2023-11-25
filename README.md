@@ -59,10 +59,115 @@ Como os enums podem ser herdados infinitamente, se necessário pode-se selar a c
 ```ruby
 public sealed class HerdadoDeOutroEnum : NomeDoSeuEnum
 {
-public static readonly NomeDoSeuEnum ChaveDoEnumHerdado = new NomeDoSeuEnum("ChaveDoEnumHerdado");
-public static readonly NomeDoSeuEnum OutraChaveHerdado = new NomeDoSeuEnum("OutraChaveHerdado");
+  public static readonly NomeDoSeuEnum ChaveDoEnumHerdado = new NomeDoSeuEnum("ChaveDoEnumHerdado");
+  public static readonly NomeDoSeuEnum OutraChaveHerdado = new NomeDoSeuEnum("OutraChaveHerdado");
 }
 ```
 
 ### Métodos de conversão:
+
+Os métodos de conversão são métodos get para acessar os atributos, inteiro, string e objeto
+```ruby
+NomeDoSeuEnum.ChaveDoEnum.ToInt();
+NomeDoSeuEnum.ChaveDoEnum.ToString();
+NomeDoSeuEnum.ChaveDoEnum.ToObject();
+```
+
+### Métodos de comparação:
+
+Para comparação simples do objeto pode-se usar os métodos de comparação padrão ==, !=, Equals(recomendado).
+```ruby
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.ChaveDoEnum;
+NomeDoSeuEnum objeto2 = NomeDoSeuEnum.OutraChave;
+
+if (objeto1 == objeto2)
+  Console.WriteLine("objeto é igual");
+if (objeto1 != objeto2)
+	Console.WriteLine("objeto é diferente");
+if (objeto1.Equals(objeto2))
+	Console.WriteLine("objeto é igual");
+```
+
+Para comparar somente as propriedades use os métodos:
+  - CompareId, para comparar somente o id do enum.
+  - CompareKey, para comparar a string.
+  - CompareObject, para comparar somente o objeto passado (funciona para string também se o objeto passado for uma chave string, mas recomendamos usar o CompareKey para tal comparação).
+```ruby
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.ChaveDoEnum;
+NomeDoSeuEnum objeto2 = NomeDoSeuEnum.ChaveDoEnum;
+
+if (objeto1.CompareId(objeto2.ToInt())
+  Console.WriteLine("o id do objeto é o igual");
+if (objeto1.CompareKey("ChaveDoEnum"))
+	Console.WriteLine("a chave do objeto é igual");
+if (objeto1.CompareObject("ChaveDoEnum"))
+	Console.WriteLine("o objeto do objeto é igual");
+```
+
+NGEnum também possibilita a criação de enums compostos, pode-se adicionar elementos em um objeto já criado usando o método Add
+> [!NOTE]
+> O método Add retorna um novo enum com os elementos adicionados, ele deve ser atribuído.
+> O id do enum composto será criado automaticamente.
+
+```ruby
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.ChaveDoEnum;
+objeto1 = objeto1.Add(NomeDoSeuEnum.OutraChave);
+
+Console.WriteLine(objeto1.ToString());
+
+//Saída: ChaveDoEnum|OutraChave
+```
+
+Também podemos criar um enum composto usando o método New.
+```ruby
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); Console.WriteLine(objeto1.ToString());
+
+//Saída: ChaveDoEnum|OutraChave
+```
+
+Para comparar enum composto use o método CompareExact, ele irá comparar se o enum é exatamente o mesmo passado no parâmetro, os mesmos elementos na mesma ordem.
+> [!NOTE]
+> O método irá funcionar com enum simples, mas recomendamos usar apenas para enum composto.
+
+```ruby
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); 
+
+if (objeto1.CompareExact(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave))
+Console.WriteLine("o enum composto é igual");
+```
+
+
+
+TambNomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); Console.WriteLine(objeto1.ToString());
+
+Saída: ChaveDoEnum|OutraChave
+
+ém podemos verificar se existem o elemento no enum composto usando o método CompareSome.
+Ele irá verificar se existe os elementos não importando a ordem.
+Obs. O método irá funcionar com enum simples, mas recomendamos usar apenas para enum composto.
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); 
+
+if (objeto1.CompareSome(NomeDoSeuEnum.ChaveDoEnum))
+Console.WriteLine("O elemento existe no enum");
+if (objeto1.CompareSome(NomeDoSeuEnum.OutraChave, NomeDoSeuEnum.ChaveDoEnum))
+Console.WriteLine("Os elementos existem no enum");
+
+
+
+
+
+
+TambNomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); Console.WriteLine(objeto1.ToString());
+
+Saída: ChaveDoEnum|OutraChave
+
+ém podemos verificar se existem algum dos enums usando o método CompareAny.
+Ele irá verificar se existe qualquer dos elementos passados no parâmetro
+Obs. O método irá funcionar com enum simples, mas recomendamos usar apenas para enum composto.
+NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum); 
+
+if (objeto1.CompareAny(NomeDoSeuEnum.ChaveDoEnum))
+Console.WriteLine("Existe o enums");
+if (objeto1.CompareAny(NomeDoSeuEnum.OutraChave, NomeDoSeuEnum.ChaveDoEnum))
+Console.WriteLine("Existe algum dos enums");
 
