@@ -88,6 +88,9 @@ if (objeto1 != objeto2)
 	Console.WriteLine("objeto é diferente");
 if (objeto1.Equals(objeto2))
 	Console.WriteLine("objeto é igual");
+
+//Saída:
+//	objeto é diferente
 ```
 
 Para comparar somente as propriedades use os métodos:
@@ -104,6 +107,11 @@ if (objeto1.CompareKey("ChaveDoEnum"))
   Console.WriteLine("a chave do objeto é igual");
 if (objeto1.CompareObject("ChaveDoEnum"))
 	Console.WriteLine("o objeto do objeto é igual");
+
+//Saída:
+//	o id do objeto é o igual
+//	a chave do objeto é igual
+//  o objeto do objeto é igual
 ```
 
 NGEnum também possibilita a criação de enums compostos, pode-se adicionar elementos em um objeto já criado usando o método Add
