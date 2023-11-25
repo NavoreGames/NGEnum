@@ -8,7 +8,7 @@
 
 # Documentação
 
-Para criar seus enums, crie uma classe que herda da classe base(NGEnums) que contenha 3 construtores. Cada atributo será uma chave do seu enum eles serão declarados como readonly e o tipo é a própria classe,  como mostrado no exemplo abaixo:
+Para criar seus enums, crie uma classe que herda da classe base(NGEnums) que contenha 3 construtores. Cada atributo será uma chave do seu enum, eles serão declarados como readonly e o tipo é a própria classe,  como mostrado no exemplo abaixo:
 
 
 ```ruby
@@ -22,3 +22,5 @@ public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
   public NomeDoSeuEnum(int pId, object pObject) : base(pId, pObject) { }
 }
 ```
+
+Os atributos chaves podem ser declarados de algumas formas:
