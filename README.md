@@ -117,7 +117,7 @@ if (objeto1.CompareObject("ChaveDoEnum"))
 NGEnum também possibilita a criação de enums compostos, pode-se adicionar elementos em um objeto já criado usando o método Add
 > [!NOTE]
 > O método Add retorna um novo enum com os elementos adicionados, ele deve ser atribuído.
-> 
+> [!NOTE]
 > O id do enum composto será criado automaticamente.
 
 ```ruby
@@ -126,7 +126,8 @@ objeto1 = objeto1.Add(NomeDoSeuEnum.OutraChave);
 
 Console.WriteLine(objeto1.ToString());
 
-//Saída: ChaveDoEnum|OutraChave
+//Saída:
+//  ChaveDoEnum|OutraChave
 ```
 
 Também podemos criar um enum composto usando o método New.
@@ -135,10 +136,13 @@ NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEn
 
 Console.WriteLine(objeto1.ToString());
 
-//Saída: ChaveDoEnum|OutraChave
+//Saída:
+//  ChaveDoEnum|OutraChave
 ```
 
-Para comparar enum composto use o método CompareExact, ele irá comparar se o enum é exatamente o mesmo passado no parâmetro, os mesmos elementos na mesma ordem.
+Para comparar enum composto use o método CompareExact.
+
+Ele irá comparar se o enum é exatamente o mesmo passado no parâmetro, os mesmos elementos na mesma ordem.
 > [!NOTE]
 > O método irá funcionar com enum simples, mas recomendamos usar apenas para enum composto.
 
@@ -147,6 +151,13 @@ NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEn
 
 if (objeto1.CompareExact(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave))
 	Console.WriteLine("o enum composto é igual");
+if (!objeto1.CompareExact(NomeDoSeuEnum.OutraChave, NomeDoSeuEnum.ChaveDoEnum))
+	Console.WriteLine("o enum composto é diferente");
+
+
+//Saída:
+//  o enum composto é igual
+//  o enum composto é diferente
 ```
 
 Também podemos verificar se existem o elemento no enum composto usando o método CompareSome.
