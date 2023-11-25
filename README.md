@@ -24,6 +24,8 @@ public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
 ```
 
 Os atributos chaves podem ser declarados de algumas formas:
+ -No primeiro exemplo será criado um id automático com o hash do objeto.
+ -No segundo exemplo o id é declarado explicitamente. 
 
 ```ruby
   public static readonly NomeDoSeuEnum ChaveDoEnum = new NomeDoSeuEnum("ChaveDoEnum");
