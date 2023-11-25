@@ -21,5 +21,4 @@ public class NomeDoSeuEnum : NGEnums<NomeDoSeuEnum>
   public NomeDoSeuEnum(object pObject) : base(pObject) { }
   public NomeDoSeuEnum(int pId, object pObject) : base(pId, pObject) { }
 }
-
 ```
