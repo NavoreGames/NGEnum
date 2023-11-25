@@ -85,12 +85,12 @@ NomeDoSeuEnum objeto2 = NomeDoSeuEnum.OutraChave;
 if (objeto1 == objeto2)
   Console.WriteLine("objeto é igual");
 if (objeto1 != objeto2)
-	Console.WriteLine("objeto é diferente");
+  Console.WriteLine("objeto é diferente");
 if (objeto1.Equals(objeto2))
-	Console.WriteLine("objeto é igual");
+  Console.WriteLine("objeto é igual");
 
 //Saída:
-//	objeto é diferente
+//  objeto é diferente
 ```
 
 Para comparar somente as propriedades use os métodos:
@@ -106,11 +106,11 @@ if (objeto1.CompareId(objeto2.ToInt())
 if (objeto1.CompareKey("ChaveDoEnum"))
   Console.WriteLine("a chave do objeto é igual");
 if (objeto1.CompareObject("ChaveDoEnum"))
-	Console.WriteLine("o objeto do objeto é igual");
+  Console.WriteLine("o objeto do objeto é igual");
 
 //Saída:
-//	o id do objeto é o igual
-//	a chave do objeto é igual
+//  o id do objeto é o igual
+//  a chave do objeto é igual
 //  o objeto do objeto é igual
 ```
 
@@ -150,9 +150,9 @@ Ele irá comparar se o enum é exatamente o mesmo passado no parâmetro, os mesm
 NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); 
 
 if (objeto1.CompareExact(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave))
-	Console.WriteLine("o enum composto é igual");
+  Console.WriteLine("o enum composto é igual");
 if (!objeto1.CompareExact(NomeDoSeuEnum.OutraChave, NomeDoSeuEnum.ChaveDoEnum))
-	Console.WriteLine("o enum composto é diferente");
+  Console.WriteLine("o enum composto é diferente");
 
 
 //Saída:
@@ -169,9 +169,9 @@ Ele irá verificar se existe os elementos não importando a ordem.
 NomeDoSeuEnum objeto1 = NomeDoSeuEnum.New(NomeDoSeuEnum.ChaveDoEnum, NomeDoSeuEnum.OutraChave); 
 
 if (objeto1.CompareSome(NomeDoSeuEnum.ChaveDoEnum))
-	Console.WriteLine("O elemento existe no enum");
+  Console.WriteLine("O elemento existe no enum");
 if (objeto1.CompareSome(NomeDoSeuEnum.OutraChave, NomeDoSeuEnum.ChaveDoEnum))
-	Console.WriteLine("Os elementos existem no enum");
+  Console.WriteLine("Os elementos existem no enum");
 ```
 
 Também podemos verificar se existem algum dos enums usando o método CompareAny.
