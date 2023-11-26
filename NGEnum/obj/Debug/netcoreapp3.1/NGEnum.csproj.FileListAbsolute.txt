@@ -1,9 +1,0 @@
-E:\NGProjects\NGEnum\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.deps.json
-E:\NGProjects\NGEnum\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.dll
-E:\NGProjects\NGEnum\NGEnum\bin\Debug\netcoreapp3.1\NGEnum.pdb
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.GeneratedMSBuildEditorConfig.editorconfig
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.AssemblyInfoInputs.cache
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.AssemblyInfo.cs
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.csproj.CoreCompileInputs.cache
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.dll
-E:\NGProjects\NGEnum\NGEnum\obj\Debug\netcoreapp3.1\NGEnum.pdb
