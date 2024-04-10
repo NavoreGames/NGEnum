@@ -8,6 +8,12 @@
 
 # Documentação
 
+### Usings:
+
+```ruby
+using NGEnum;
+```
+
 ### Implementação:
 
 Para criar seus enums, crie uma classe que herda da classe base(NGEnums) que contenha 3 construtores. 
